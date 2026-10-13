@@ -6,7 +6,7 @@
   "description": "Free provider swarm with a local dashboard and evidence review.",
   "scripts": {
     "build": "node scripts/build-dashboard.mjs",
-    "test": "vitest run tests/dashboard",
+    "test": "vitest run --dir tests/dashboard",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
