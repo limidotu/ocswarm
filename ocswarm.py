@@ -366,8 +366,6 @@ def files_same(left, right):
 	rs = right.stat()
 	if ls.st_size != rs.st_size:
 		return False
-	if ls.st_mtime_ns == rs.st_mtime_ns:
-		return True
 	with left.open("rb") as fa, right.open("rb") as fb:
 		while True:
 			ca = fa.read(1024 * 1024)
