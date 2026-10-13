@@ -1,0 +1,21 @@
+{
+  "name": "ocswarm",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Free provider swarm with a local dashboard and evidence review.",
+  "scripts": {
+    "build": "node scripts/build-dashboard.mjs",
+    "test": "vitest run tests/dashboard",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "vis-network": "9.1.13"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.1",
+    "esbuild": "0.25.12",
+    "typescript": "5.9.3",
+    "vitest": "4.1.11"
+  }
+}

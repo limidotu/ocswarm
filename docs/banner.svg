@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320">
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#07150f"/><stop offset="1" stop-color="#0c2225"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#51efb2" stop-opacity=".18"/><stop offset="1" stop-color="#51efb2" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="320" rx="20" fill="url(#bg)"/>
+  <circle cx="975" cy="160" r="170" fill="url(#glow)"/>
+  <g stroke="#45b588" stroke-width="2" opacity=".65">
+    <path d="M970 155 855 80M970 155 1100 65M970 155 1115 215M970 155 890 260M970 155 825 185M855 80 825 185M1100 65 1115 215"/>
+  </g>
+  <g fill="#66f0b8" stroke="#173d30" stroke-width="6">
+    <circle cx="970" cy="155" r="24"/><circle cx="855" cy="80" r="12"/><circle cx="1100" cy="65" r="12"/><circle cx="1115" cy="215" r="12"/><circle cx="890" cy="260" r="12"/><circle cx="825" cy="185" r="12"/>
+  </g>
+  <text x="64" y="138" fill="#f0fff7" font-family="Segoe UI,Arial,sans-serif" font-size="72" font-weight="700" letter-spacing="-2">Ocswarm</text>
+  <text x="68" y="188" fill="#91c8ae" font-family="Segoe UI,Arial,sans-serif" font-size="23">Free models. Shared mission. Visible progress.</text>
+  <text x="68" y="246" fill="#5be2ae" font-family="Consolas,monospace" font-size="16" letter-spacing="2">PLAN → WORK → REVIEW → TEST</text>
+</svg>
