@@ -73,6 +73,9 @@ class FreeSwarmTests(unittest.TestCase):
 	def scenario(self, root, reject_validation=False, reject_review=False, stop_during_review=False, refill_during_review=False, multiprovider=False):
 		project = root / "project"
 		(project / "etg-rs").mkdir(parents=True)
+		(project / "etg-rs/README.md").write_text("Fixture source instructions.")
+		(project / "etg-rs/crates/etg-core/tests").mkdir(parents=True)
+		(project / "etg-rs/crates/etg-core/tests/pits.rs").write_text("Fixture pit tests.")
 		(project / "etg-rs" / "a.rs").write_text("old a")
 		(project / "etg-rs" / "b.rs").write_text("old b")
 		for name in ["c", "d"]:
@@ -101,6 +104,10 @@ class FreeSwarmTests(unittest.TestCase):
 				pass
 		def start(slot, exe, url, cwd, prompt, log, snap, allow, model=None, env=None):
 			if slot["role"] == "orchestrator":
+				self.assertTrue((Path(cwd) / "etg-rs/README.md").is_file(), "Planner README path is missing")
+				self.assertTrue((Path(cwd) / "etg-rs/crates/etg-core/tests/pits.rs").is_file(), "Planner pit test path is missing")
+				config = json.loads(Path(env["OPENCODE_CONFIG"]).read_text())
+				self.assertFalse(any(rule["action"] == "edit" and rule["effect"] == "allow" for rule in config["agents"]["build"]["permissions"]))
 				names = ["c", "d"] if refill_during_review and slot["item"] != "plan-1" else ["a", "b"]
 				if multiprovider:
 					names = ["a", "b", "c"]

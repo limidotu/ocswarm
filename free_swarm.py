@@ -324,8 +324,7 @@ def run(launch, core):
 	workspaces = {}
 	workspace_root = core.RUNTIME / "work"
 	run_root = workspace_root / str(os.getpid())
-	plan_root = run_root / "planner"
-	plan_root.mkdir(parents=True, exist_ok=True)
+	plan_root = project
 	commands = launch.get("accept") or [". ~/.etg-tools/etg-env.sh && cargo test --manifest-path etg-rs/Cargo.toml --no-fail-fast"]
 	gateway = FreeGateway(core.RUNTIME / "provider-usage.json")
 	routes = ProviderRoutes(core, gateway) if hasattr(gateway, "providers") else core.WorkerRoutes()
